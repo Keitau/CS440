@@ -11,7 +11,7 @@ public:
 
 	int getPlayerTurn(){return playerTurn;}
 	String getCurrentPlayerName();
-	bool isWon(DIRECTION dir);
+	bool playerWon(DIRECTION dir);
 	
 	// Code for the return of the input
 	enum RET_CODE{
@@ -31,9 +31,9 @@ public:
 private:
 
 	//recursive function used to find if player has 3 marks in a row
-	int isWon(int currPosition, DIRECTION dir);
+	int check(int currPosition, int change);
 	
 	int* gameBoard;
-	Player** players;
+	Player* players;
 	int playerTurn;
 };
